@@ -1,0 +1,5 @@
+dist/
+src/external/*
+src/icons/*
+node_modules/
+tests/coverage/
