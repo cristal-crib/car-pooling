@@ -3,8 +3,12 @@ import resolve from 'rollup-plugin-node-resolve'
 import commonjs from 'rollup-plugin-commonjs'
 import livereload from 'rollup-plugin-livereload'
 import staticSite from 'rollup-plugin-static-site'
+import replace from 'rollup-plugin-replace'
 import { terser } from 'rollup-plugin-terser'
+import dotenv from 'dotenv'
 
+const result = dotenv.config()
+console.log(result.parsed)
 // eslint-disable-next-line no-process-env
 const production = !process.env.ROLLUP_WATCH
 
@@ -18,6 +22,9 @@ export default [
       file: 'public/bundle.js'
     },
     plugins: [
+      replace({
+        ENV: JSON.stringify({ hello: 'there' })
+      }),
       svelte({
         // enable run-time checks when not in production
         dev: !production,

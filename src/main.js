@@ -1,11 +1,15 @@
 import App from './App.svelte'
 
+import config from './config'
+
 const app = new App({
   target: document.body,
   props: {
     name: 'world'
   }
 })
+
+console.log(config)
 
 const check = () => {
   if (!('serviceWorker' in navigator)) {
