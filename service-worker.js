@@ -1,11 +1,22 @@
+// import firebase from 'firebase/app'
+
 console.log('Hello from service-worker.js')
 
-const registerServiceWorker = async () => {
-  const swRegistration = await navigator.serviceWorker.register('service.js') //notice the file name
-  return swRegistration
-}
+// const messaging = firebase.messaging()
 
-const main = () => {
-  registerServiceWorker()
-}
-main()
+// messaging.setBackgroundMessageHandler(function(payload) {
+//   console.log(
+//     '[firebase-messaging-sw.js] Received background message ',
+//     payload
+//   )
+//   // Customize notification here
+//   const notificationTitle = 'Background Message Title'
+//   const notificationOptions = {
+//     body: 'Background Message body.'
+//   }
+
+//   return self.registration.showNotification(
+//     notificationTitle,
+//     notificationOptions
+//   )
+// })
